@@ -1,18 +1,18 @@
+import asyncio
+from pyrogram import Client, idle
+from config import API_ID, API_HASH, BOT_TOKEN
+from player.videoplayer import app
+from player.videoplayer import call_py
+bot = Client(
+    ":memory:",
+    API_ID,
+    API_HASH,
+    bot_token=BOT_TOKEN,
+    plugins=dict(root="player"),
+)
 
-import os
 
-from os import getenv
-from dotenv import load_dotenv
-
-load_dotenv()
-admins = {}
-API_ID = int(os.getenv("API_ID", "6"))
-API_HASH = os.getenv("API_HASH", "86c3683ad891c8f4ca5b1ae6b55eac00")
-BOT_USERNAME = os.getenv("BOT_USERNAME", "Chronicstreamerbot")
-ASSISTANT_NAME = os.getenv("ASSISTANT_NAME", "VcVideoRoBot")
-SUPPORT_GROUP = os.getenv("SUPPORT_GROUP", "friendsforeverlinks")
-UPDATES_CHANNEL = os.getenv("UPDATES_CHANNEL", "oldfeudal")
-SOURCE_CODE = os.getenv("SOURCE_CODE", "github.com/killashan/test1/blob/main/Test%203"")
-BOT_TOKEN = os.getenv("BOT_TOKEN","1949775594:AAGxqOtr5eY3NcviqmIIwu9iA07PxBsyMP4")
-SESSION_NAME = os.getenv("SESSION_NAME","BQCz1j0FreUvjQLpqurE0HO9Rx-hZfe9Kl8KPayD-Frys0SpB3e8Xtg3u56WGrg8eAgDKsbexUlHfVrNlAWWMnqqz8EdOyIJod56HiSqTvH_aABqWrTykKLISK0Y5wsUO5eQwXE8iRHvPChUPJP5qWhNvWA4yDptzlkKTrB_JoTiMYARXEUKenzeHTKu8LVDf1RMtobYug9PoHP5jcB7YIZQRxyQrRSu9VisqS2FqgU9kridEwhMf_USFaXyxApzmbD1g0BQPjvFwf30pG0rcGFURzhs_yayNcrfPILJCXgSND143XUC-kJVSo_G7tYLIzO6RwHX9kwYoUqFwT_28r6RMcQevwA")
-SUDO_USERS = list(map(int, getenv("SUDO_USERS","834936511").split()))
+bot.start()
+app.start()
+call_py.start()
+idle()
